@@ -13,13 +13,10 @@
 		3FE407DC222708FA0065C723 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE407DA222708FA0065C723 /* Main.storyboard */; };
 		3FE407DE222708FA0065C723 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FE407DD222708FA0065C723 /* Assets.xcassets */; };
 		3FE407E1222708FA0065C723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE407DF222708FA0065C723 /* LaunchScreen.storyboard */; };
-		3FE407EA2227091C0065C723 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3FE407E92227091C0065C723 /* README.md */; };
 		3FE407EE2227098D0065C723 /* ItemTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE407ED2227098D0065C723 /* ItemTypes.swift */; };
 		3FE407F122270A520065C723 /* dog.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3FE407F022270A520065C723 /* dog.jpeg */; };
 		3FE407F322270A5D0065C723 /* cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3FE407F222270A5D0065C723 /* cat.jpeg */; };
 		3FE407F522270A6A0065C723 /* hoff.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FE407F422270A6A0065C723 /* hoff.jpg */; };
-		3FE407F722270C6D0065C723 /* iPhone5s.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FE407F622270C6D0065C723 /* iPhone5s.gif */; };
-		3FE407F922270D090065C723 /* iPadAir.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3FE407F822270D090065C723 /* iPadAir.gif */; };
 		3FE407FD22270D8C0065C723 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE407FC22270D8C0065C723 /* SplitViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -168,11 +165,8 @@
 				3FE407E1222708FA0065C723 /* LaunchScreen.storyboard in Resources */,
 				3FE407DE222708FA0065C723 /* Assets.xcassets in Resources */,
 				3FE407F522270A6A0065C723 /* hoff.jpg in Resources */,
-				3FE407F722270C6D0065C723 /* iPhone5s.gif in Resources */,
-				3FE407EA2227091C0065C723 /* README.md in Resources */,
 				3FE407DC222708FA0065C723 /* Main.storyboard in Resources */,
 				3FE407F322270A5D0065C723 /* cat.jpeg in Resources */,
-				3FE407F922270D090065C723 /* iPadAir.gif in Resources */,
 				3FE407F122270A520065C723 /* dog.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
