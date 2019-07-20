@@ -9,12 +9,14 @@
 import UIKit
 
 public protocol SplitMasterProtocol: UIViewController {
+    var masterSplitViewController: MasterDetailSplitViewController? { get set }
     var detailViewController: SplitDetailProtocol? { get set }
     func receive(_ datum: Int)
 }
 
 
 public protocol SplitDetailProtocol: UIViewController {
+    var masterSplitViewController: MasterDetailSplitViewController? { get set }
     var masterViewController: SplitMasterProtocol? { get set }
     func receive(_ datum: Int)
 }
@@ -34,22 +36,27 @@ public enum MasterDetailFactory {
     
 }
 
-class MasterDetailSplitViewController: UISplitViewController, MasterDetailSplitProtocol {
+public class MasterDetailSplitViewController: UISplitViewController, MasterDetailSplitProtocol {
     var masterViewController: SplitMasterProtocol?
+    var masterNav: UINavigationController?
     
     var detailViewController: SplitDetailProtocol?
+    var detailNav: UINavigationController?
     
     func setup(_ master: SplitMasterProtocol,
                _ detail: SplitDetailProtocol) {
+        masterNav = UINavigationController(rootViewController: master)
+        detailNav = UINavigationController(rootViewController: detail)
         master.detailViewController = detail
+        master.masterSplitViewController = self
         detail.masterViewController = master
-        
-        viewControllers = [master, detail]
+        detail.masterSplitViewController = self
+        detail.navigationItem.leftItemsSupplementBackButton = true
+        detail.navigationItem.leftBarButtonItem = displayModeButtonItem
+        viewControllers = [masterNav, detailNav] as! [UIViewController]
         delegate = self
     }
     
 }
 
-extension MasterDetailSplitViewController: UISplitViewControllerDelegate {
-    
-}
+extension MasterDetailSplitViewController: UISplitViewControllerDelegate { }

@@ -34,7 +34,6 @@ class DetailSample: UIViewController, SplitDetailProtocol {
     func receive(_ datum: Int) {
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .purple
@@ -46,7 +45,6 @@ class MasterSample: UIViewController, SplitMasterProtocol {
     
     func receive(_ datum: Int) {
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
