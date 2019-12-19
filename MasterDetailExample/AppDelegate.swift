@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MasterDetailFactory
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,33 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func startingVC() -> UIViewController {
-        return MasterDetailFactory.create(MasterSample(),
-                                          DetailSample())
+        return ProgrammaticSample.start()
     }
 
 }
 
-class DetailSample: UIViewController, SplitDetailProtocol {
-    var masterViewController: SplitMasterProtocol?
-    
-    func receive(_ datum: Int) {
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .purple
-    }
-}
-
-class MasterSample: UIViewController, SplitMasterProtocol {
-    var detailViewController: SplitDetailProtocol?
-    
-    func receive(_ datum: Int) {
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
-    }
-    
-}

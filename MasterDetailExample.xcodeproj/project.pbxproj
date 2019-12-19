@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F38372C23ABC8FC000ABCF6 /* ProgrammaticSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F38372B23ABC8FC000ABCF6 /* ProgrammaticSamples.swift */; };
+		3F7A9FE123ABC0EB00FBB822 /* MasterDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7A9FE023ABC0EB00FBB822 /* MasterDetailProtocols.swift */; };
 		3FC2622A22E2680400BD59CE /* MasterDetailFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FC2622822E2680400BD59CE /* MasterDetailFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FC2622D22E2680400BD59CE /* MasterDetailFactory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC2622622E2680300BD59CE /* MasterDetailFactory.framework */; };
 		3FC2622E22E2680400BD59CE /* MasterDetailFactory.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC2622622E2680300BD59CE /* MasterDetailFactory.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -52,6 +54,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F38372B23ABC8FC000ABCF6 /* ProgrammaticSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammaticSamples.swift; sourceTree = "<group>"; };
+		3F7A9FE023ABC0EB00FBB822 /* MasterDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterDetailProtocols.swift; sourceTree = "<group>"; };
 		3FC2621E22E2670800BD59CE /* MasterDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterDetailFactory.swift; sourceTree = "<group>"; };
 		3FC2622622E2680300BD59CE /* MasterDetailFactory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MasterDetailFactory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC2622822E2680400BD59CE /* MasterDetailFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterDetailFactory.h; sourceTree = "<group>"; };
@@ -93,9 +97,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F38372A23ABC8EA000ABCF6 /* Programmatic Sample */ = {
+			isa = PBXGroup;
+			children = (
+				3F38372B23ABC8FC000ABCF6 /* ProgrammaticSamples.swift */,
+			);
+			path = "Programmatic Sample";
+			sourceTree = "<group>";
+		};
+		3F7A9FE223ABC61B00FBB822 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3FE407FC22270D8C0065C723 /* SplitViewController.swift */,
+				3FE407D6222708FA0065C723 /* MasterViewController.swift */,
+				3FE407D8222708FA0065C723 /* DetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		3FC2622722E2680400BD59CE /* MasterDetailFactory */ = {
 			isa = PBXGroup;
 			children = (
+				3F7A9FE023ABC0EB00FBB822 /* MasterDetailProtocols.swift */,
 				3FC2621E22E2670800BD59CE /* MasterDetailFactory.swift */,
 				3FC2622822E2680400BD59CE /* MasterDetailFactory.h */,
 				3FC2622922E2680400BD59CE /* Info.plist */,
@@ -126,11 +149,10 @@
 		3FE407D3222708FA0065C723 /* MasterDetailExample */ = {
 			isa = PBXGroup;
 			children = (
+				3F38372A23ABC8EA000ABCF6 /* Programmatic Sample */,
+				3F7A9FE223ABC61B00FBB822 /* ViewControllers */,
 				3FE407EF22270A310065C723 /* Images */,
 				3FE407ED2227098D0065C723 /* ItemTypes.swift */,
-				3FE407FC22270D8C0065C723 /* SplitViewController.swift */,
-				3FE407D6222708FA0065C723 /* MasterViewController.swift */,
-				3FE407D8222708FA0065C723 /* DetailViewController.swift */,
 				3FE407D4222708FA0065C723 /* AppDelegate.swift */,
 				3FE407DA222708FA0065C723 /* Main.storyboard */,
 				3FE407DD222708FA0065C723 /* Assets.xcassets */,
@@ -279,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FC2623322E2680800BD59CE /* MasterDetailFactory.swift in Sources */,
+				3F7A9FE123ABC0EB00FBB822 /* MasterDetailProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FE407EE2227098D0065C723 /* ItemTypes.swift in Sources */,
+				3F38372C23ABC8FC000ABCF6 /* ProgrammaticSamples.swift in Sources */,
 				3FE407D9222708FA0065C723 /* DetailViewController.swift in Sources */,
 				3FE407D7222708FA0065C723 /* MasterViewController.swift in Sources */,
 				3FE407D5222708FA0065C723 /* AppDelegate.swift in Sources */,
@@ -336,7 +360,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MasterDetailFactory/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -364,7 +388,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MasterDetailFactory/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -503,6 +527,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MasterDetailExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -521,6 +546,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MasterDetailExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

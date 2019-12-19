@@ -8,43 +8,41 @@
 
 import UIKit
 
-public protocol SplitMasterProtocol: UIViewController {
-    var masterSplitViewController: MasterDetailSplitViewController? { get set }
-    var detailViewController: SplitDetailProtocol? { get set }
-    func receive(_ datum: Int)
-}
-
-
-public protocol SplitDetailProtocol: UIViewController {
-    var masterSplitViewController: MasterDetailSplitViewController? { get set }
-    var masterViewController: SplitMasterProtocol? { get set }
-    func receive(_ datum: Int)
-}
-
-public protocol MasterDetailSplitProtocol: UISplitViewController {
-    var masterViewController: SplitMasterProtocol? { get set }
-    var detailViewController: SplitDetailProtocol? { get set }
-}
-
 public enum MasterDetailFactory {
     public static func create(_ master: SplitMasterProtocol,
                               _ detail: SplitDetailProtocol) -> MasterDetailSplitProtocol {
-        let vc = MasterDetailSplitViewController()
-        vc.setup(master, detail)
+        let vc: MasterDetailSplitProtocol = MasterDetailSplitViewController(master, detail)
         return vc
     }
     
 }
 
 public class MasterDetailSplitViewController: UISplitViewController, MasterDetailSplitProtocol {
-    var masterViewController: SplitMasterProtocol?
-    var masterNav: UINavigationController?
     
-    var detailViewController: SplitDetailProtocol?
-    var detailNav: UINavigationController?
+    // MARK: - UIViewController Properties
     
+    var masterNav: UINavigationController!
+    var detailNav: UINavigationController!
+    public var masterViewController: SplitMasterProtocol!
+    public var detailViewController: SplitDetailProtocol!
+    
+    // MARK: - Initializers
+    
+    required public init(_ master: SplitMasterProtocol, _ detail: SplitDetailProtocol) {
+        super.init(nibName: nil, bundle: nil)
+        setup(master, detail)
+        navigationItem.leftBarButtonItem = displayModeButtonItem
+        delegate = self
+        preferredDisplayMode = .allVisible
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("not implemented")
+    }
+    
+    // MARK: - Helper Function for Setup
     func setup(_ master: SplitMasterProtocol,
-               _ detail: SplitDetailProtocol) {
+                      _ detail: SplitDetailProtocol) {
         masterNav = UINavigationController(rootViewController: master)
         detailNav = UINavigationController(rootViewController: detail)
         master.detailViewController = detail
@@ -54,9 +52,22 @@ public class MasterDetailSplitViewController: UISplitViewController, MasterDetai
         detail.navigationItem.leftItemsSupplementBackButton = true
         detail.navigationItem.leftBarButtonItem = displayModeButtonItem
         viewControllers = [masterNav, detailNav] as! [UIViewController]
-        delegate = self
+    }
+    
+    // MARK: - Methods
+    
+    public func showDetailViewController() {
+        guard let detailVC = detailViewController else { return }
+        showDetailViewController(detailVC, sender: nil)
     }
     
 }
 
-extension MasterDetailSplitViewController: UISplitViewControllerDelegate { }
+extension MasterDetailSplitViewController: UISplitViewControllerDelegate {
+    
+    // avoid default behavior to show detail-first
+    public func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
+    }
+    
+}
